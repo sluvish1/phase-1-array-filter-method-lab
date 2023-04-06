@@ -1,14 +1,28 @@
-const allDrivers = ['Bobby', 'Sammy', 'Sally', 'Annette', 'Sarah', 'Bobby']
-
-//const findMatching = (names)=>nameOfDrivers.filter(name => nameOfDrivers);
-
-function findMatching(drivers,name){
-let results = drivers.filter(function(driver){
-    if(driver === name || driver === name.toLowerCase()){
-        return name
-    }
-}) 
- return results}
 
 
-//console.log(typeof findMatching)
+function findMatching(arrayOfDriversNames,name){
+    let results = arrayOfDriversNames.filter(function(driver){
+        if(driver === name || driver === name.toLowerCase()){
+            return name
+        }
+    }) 
+     return results};
+
+
+     function fuzzyMatch(arrayOfDriversNames, startingLetters){
+        let results = arrayOfDriversNames.filter(function(anIndividualDriverName){
+                if(anIndividualDriverName.startsWith(startingLetters)){
+                    return anIndividualDriverName
+                }
+            });
+     return results};
+
+     function matchName(arrayOfDriverObjs,aNameOfDriver){
+        let results = arrayOfDriverObjs.filter(
+            function(driverObj){
+                console.log(driverObj)
+                if(driverObj.name === aNameOfDriver){
+                    return driverObj
+                }
+            })
+        return results};
